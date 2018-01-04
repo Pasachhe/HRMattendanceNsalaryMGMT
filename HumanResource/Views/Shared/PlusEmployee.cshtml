@@ -1,0 +1,56 @@
+﻿@model HumanResource.Models.EmployeeViewModel
+
+<div>
+
+    <form id="myForm">
+        @Html.HiddenFor(m => m.EmployeeId)
+
+        @Html.DropDownListFor(model => model.DepartmentId, ViewBag.DepartmentList as SelectList, "--Department--", new { @class = "form-control" })
+        @Html.DropDownListFor(model => model.UserId, ViewBag.SiteUserList as SelectList, "--Employee--", new { @class = "form-control" })
+        @Html.TextBoxFor(model => model.Salary, new { @class = "form-control", @placeholder = "Salary" })
+
+        <a href="#" id="btnSubmit" class="btn btn-success btn-block">
+            @if (Model.EmployeeId > 0)
+            {<span>Update</span> }
+            else
+            {<span>Save</span>}
+        </a>
+
+    </form>
+
+    <div style="text-align:center;display:none" id="loaderDiv">
+        <img src="~/Content/InternetSlowdown_Day.gif" width="150" />
+    </div>
+
+</div>
+
+
+<script>
+    debugger;
+    $(document).ready(function() {
+
+        $("#btnSubmit").click(function() {
+
+            $("#loaderDiv").show();
+
+            var myformdata = $("#myForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "/Employee/Employee",
+                data: myformdata,
+                success: function() {
+                    $("#loaderDiv").hide();
+                    $("#myModal").modal("hide");
+                    window.location.href = "/Employee/Employee";
+
+                }
+
+            });
+        });
+
+    });
+
+
+</script>
+

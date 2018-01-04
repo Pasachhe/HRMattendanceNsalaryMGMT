@@ -1,0 +1,38 @@
+﻿@model HumanResource.Models.AttendanceViewModel
+@{
+    ViewBag.Title = "SuperAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@Html.ActionLink("Back to Index","Index")*@
+
+<div class="container" style="width: 40%; margin-top: 2%">
+    <table class="table table-responsive">
+        
+        <tr>
+            <th>Date</th>
+            <th>Employee</th>
+            <th>In Time</th>
+            <th>Out Time</th>
+            <th>Work Hour</th>
+            <th>Wage</th>
+            <th></th>
+        </tr>
+        <tbody>
+        @if (ViewBag.AttendanceList != null)
+        {
+            foreach (var item in ViewBag.AttendanceList)
+            {
+                <tr id="row_@item.AttendanceId">
+                    <td>@item.Date</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.InTime</td>
+                    <td>@item.OutTime</td>
+                    <td>@item.WorkHours</td>
+                    <td>@item.Wage</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>
+

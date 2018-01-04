@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0464fe898c8740bf98187b358451cdcc" Name="Diagram1">
+        <EntityTypeShape EntityType="HRModel.Attendance" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.Department" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.Designition" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.Employee" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.Project" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.SiteUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRModel.UserRole" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="HRModel.FK_Attendance_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HRModel.FK_Employee_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="HRModel.FK_Employee_Designition" ManuallyRouted="false" />
+        <AssociationConnector Association="HRModel.FK_Employee_SiteUser" ManuallyRouted="false" />
+        <AssociationConnector Association="HRModel.FK_SiteUser_UserRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
